@@ -2,20 +2,20 @@ filetype off
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+"call vundle#rc()
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'henrik/vim-indexed-search'
-"Plugin 'lyuts/vim-rtags'
-Plugin 'kopischke/vim-fetch'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'gnattishness/cscope_maps'
-Plugin 'kergoth/vim-bitbake'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'bling/vim-airline'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'henrik/vim-indexed-search'
+""Plugin 'lyuts/vim-rtags'
+"Plugin 'kopischke/vim-fоetch'
+"Plugin 'tmux-plugins/vim-tmux'
+"Plugin 'gnattishness/cscope_maps'
+"Plugin 'kergoth/vim-bitbake'
 
-call vundle#end()
+"call vundle#end()
 filetype plugin indent on
 
 " global preferences "
@@ -61,3 +61,11 @@ filetype indent on
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set laststatus=2
+
+for prefix in ['i', 'n', 'v']
+    for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+	exe prefix . "noremap " . key . " <Nop"
+    endfor
+endfor
+set guioptions-=T
+set guioptions-=m
